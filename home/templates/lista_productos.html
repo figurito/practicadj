@@ -1,0 +1,13 @@
+ {% extends 'main.html' %}
+ {% block content %}
+ <h1>Lista de Productos</h1>
+ {% for p in productos  %}
+ <p>
+ Nombre: {{p.nombre}}
+ precio: {{p.precio}}
+ stock: {{p.stock}}
+ marca: {{p.marca}}
+ 
+ {% endfor  %}
+ {% endblock content  %}
+
