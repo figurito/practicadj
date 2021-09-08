@@ -2,7 +2,7 @@
 <html>
     
 <head>
-	<title>Crear Cuenta</title>
+	<title>Login</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
@@ -71,17 +71,16 @@
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
 				<div class="d-flex justify-content-center">
-					<h3 id="form-title">Crear Cuenta</h3>
+					<h3 id="form-title">Crear Usuario</h3>
 				</div>
 				<div class="d-flex justify-content-center form_container">
 
 					<form method="POST" action="">
-                    {% csrf_token %}
+						{% csrf_token %}
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-                          
 							{{ form.username }}
 						</div>
 						<div class="input-group mb-2">
@@ -104,14 +103,16 @@
 						</div>
 
 				   		<div class="d-flex justify-content-center mt-3 login_container">
-				 			<input class="btn login_btn" type="submit" value="Registrar Cuenta">
+				 			<input class="btn login_btn" type="submit" value="Crear Cuenta">
 				   		</div>
 					</form>
 				</div>
-                {{form.errors}}
+
+				{{form.errors}}
+		
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
-						Ya tienes una Cuenta? <a href="{% url 'login' %}" class="ml-2">Iniciar sesión</a>
+						Ya tienes una Cuenta? <a href="{% url 'login' %}" class="ml-2">Inicias sesión</a>
 					</div>
 				</div>
 			</div>
@@ -124,10 +125,10 @@
 
 		//Query All input fields
 		var form_fields = document.getElementsByTagName('input')
-		form_fields[1].placeholder='Nombre Usuario..';
-		form_fields[2].placeholder='Correo Electronico..';
-		form_fields[3].placeholder='Contraseña...';
-		form_fields[4].placeholder='Confirmar Contraseña...';
+		form_fields[1].placeholder='Nombre usuario';
+		form_fields[2].placeholder='Correo Electronico';
+		form_fields[3].placeholder='Contraseña';
+		form_fields[4].placeholder='Confirmar Contraseña';
 
 
 		for (var field in form_fields){	
